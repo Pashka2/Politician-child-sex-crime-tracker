@@ -31,6 +31,7 @@ export const OFFICE_STATUS_LABEL: Record<OfficeStatus, string> = {
   former: "Former / out of office at the time of the offense",
   candidate: "Candidate at the time of the offense",
   "appointed-official": "Appointed official at the time of the offense",
+  "before-office": "Private citizen — before they held office",
 };
 
 /**

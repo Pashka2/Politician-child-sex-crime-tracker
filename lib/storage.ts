@@ -155,6 +155,8 @@ export type SubmissionEdit = Pick<
   | "officeStatusAtOffense"
   | "convictionYear"
   | "offenseSummary"
+  | "partyProofUrl"
+  | "convictionProofUrls"
 >;
 
 export async function updateSubmission(id: string, patch: Partial<SubmissionEdit>): Promise<void> {

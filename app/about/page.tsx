@@ -26,11 +26,7 @@ export default function AboutPage() {
         <p>
           This project is run by Pasha, an independent developer. It is not affiliated with any
           political party, campaign, candidate, government agency, or news organization, and it
-          accepts no funding from any of them. It is built and maintained independently, and any{" "}
-          <a className="underline" href="https://buymeacoffee.com/pashka2" target="_blank" rel="noopener noreferrer">
-            reader support
-          </a>{" "}
-          goes toward keeping it online and funding the research that keeps it accurate.
+          accepts no funding from any of them. It is built and maintained independently.
         </p>
       </Section>
 
@@ -83,12 +79,6 @@ export default function AboutPage() {
               Report a correction, dispute, or removal
             </Link>{" "}
             if you believe something here is wrong.
-          </li>
-          <li>
-            <a className="underline" href="https://buymeacoffee.com/pashka2" target="_blank" rel="noopener noreferrer">
-              Support the project
-            </a>{" "}
-            to help cover hosting and a proper domain.
           </li>
         </ul>
       </Section>

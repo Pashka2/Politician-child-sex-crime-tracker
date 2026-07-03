@@ -27,8 +27,6 @@ const navLinks = [
   { href: "/about", label: "About" },
 ];
 
-const SUPPORT_URL = "https://buymeacoffee.com/pashka2";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,16 +48,6 @@ export default function RootLayout({
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href={SUPPORT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-amber-400 px-3 py-1.5 font-medium text-amber-950 hover:bg-amber-300"
-                >
-                  Support me
-                </a>
-              </li>
             </ul>
           </nav>
         </header>

@@ -212,6 +212,7 @@ function SubmissionCard({ s }: { s: Submission }) {
               <option value="former">Former / out of office</option>
               <option value="candidate">Candidate</option>
               <option value="appointed-official">Appointed official</option>
+              <option value="before-office">Before holding office (private citizen)</option>
             </select>
           </Field>
           <Field label="Conviction year">
@@ -238,21 +239,49 @@ function SubmissionCard({ s }: { s: Submission }) {
           <p className="mb-3 text-xs text-slate-500">Submitter: {s.submitterEmail}</p>
         )}
 
-        <div className="mb-4 space-y-2 rounded-lg bg-slate-50 p-3 text-sm">
-          <p className="font-medium text-slate-700">Verify these against the fields above:</p>
-          <p>
-            <span className="text-slate-500">Party proof: </span>
-            <ProofLink url={s.partyProofUrl} />
+        <div className="mb-4 space-y-3 rounded-lg bg-slate-50 p-3 text-sm">
+          <p className="font-medium text-slate-700">
+            Proof links — open the link to verify, edit the field to correct it.
           </p>
-          <div>
-            <span className="text-slate-500">Conviction proof:</span>
-            <ul className="ml-4 list-disc">
-              {s.convictionProofUrls.map((u, i) => (
-                <li key={i}>
-                  <ProofLink url={u} />
-                </li>
-              ))}
-            </ul>
+
+          <div className="space-y-1">
+            <div className="flex items-center justify-between gap-2">
+              <label className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                Party proof URL
+              </label>
+              {s.partyProofUrl && (
+                <a
+                  href={s.partyProofUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 text-xs text-blue-700 underline hover:text-blue-900"
+                >
+                  open ↗
+                </a>
+              )}
+            </div>
+            <input name="partyProofUrl" defaultValue={s.partyProofUrl} className={inputCls} />
+          </div>
+
+          <div className="space-y-1">
+            <label className="text-xs font-medium uppercase tracking-wide text-slate-400">
+              Conviction proof URLs — one per line
+            </label>
+            {s.convictionProofUrls.length > 0 && (
+              <ul className="ml-4 list-disc">
+                {s.convictionProofUrls.map((u, i) => (
+                  <li key={i}>
+                    <ProofLink url={u} />
+                  </li>
+                ))}
+              </ul>
+            )}
+            <textarea
+              name="convictionProofUrls"
+              defaultValue={s.convictionProofUrls.join("\n")}
+              rows={3}
+              className={inputCls}
+            />
           </div>
         </div>
 

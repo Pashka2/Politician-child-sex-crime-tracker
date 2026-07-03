@@ -14,7 +14,13 @@ export interface SubmitState {
 
 const PARTIES: Party[] = ["R", "D", "I", "Other"];
 const LEVELS: OfficeLevel[] = ["federal", "state", "local"];
-const OFFICE_STATUSES: OfficeStatus[] = ["in-office", "former", "candidate", "appointed-official"];
+const OFFICE_STATUSES: OfficeStatus[] = [
+  "in-office",
+  "former",
+  "candidate",
+  "appointed-official",
+  "before-office",
+];
 
 function isHttpUrl(v: string): boolean {
   try {

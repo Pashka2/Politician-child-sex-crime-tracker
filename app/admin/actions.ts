@@ -48,6 +48,16 @@ function editFromForm(formData: FormData): Partial<SubmissionEdit> {
   const offenseSummary = str("offenseSummary");
   if (offenseSummary) patch.offenseSummary = offenseSummary;
 
+  const partyProofUrl = str("partyProofUrl");
+  if (partyProofUrl) patch.partyProofUrl = partyProofUrl;
+  const convictionProofRaw = str("convictionProofUrls");
+  if (convictionProofRaw !== undefined) {
+    patch.convictionProofUrls = convictionProofRaw
+      .split(/[\n,]+/)
+      .map((u) => u.trim())
+      .filter(Boolean);
+  }
+
   return patch;
 }
 

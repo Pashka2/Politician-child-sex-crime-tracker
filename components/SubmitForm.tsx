@@ -108,6 +108,7 @@ export function SubmitForm() {
           <option value="former">Former / out of office at the time</option>
           <option value="candidate">Candidate (not yet in office)</option>
           <option value="appointed-official">Appointed official at the time</option>
+          <option value="before-office">Before they held office (private citizen)</option>
         </select>
         <p className="text-xs text-slate-500">
           When the offense happened — not when they were convicted.

@@ -29,7 +29,12 @@ export type Party = "R" | "D" | "I" | "Other";
 export type OfficeLevel = "federal" | "state" | "local";
 
 /** What the person's relationship to the office was AT THE TIME OF THE OFFENSE. */
-export type OfficeStatus = "in-office" | "former" | "candidate" | "appointed-official";
+export type OfficeStatus =
+  | "in-office"
+  | "former"
+  | "candidate"
+  | "appointed-official"
+  | "before-office";
 
 export type CaseStatus =
   | "convicted" // final conviction (trial or guilty/no-contest plea)
